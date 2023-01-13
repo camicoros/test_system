@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests</title>
+</head>
+<body>
+<h1>Tests</h1>
+<ul>
+    {% for test in tests %}
+        <li>
+            <h2>{{ test.title }}</h2>
+            <p>{{ test.updated|date }}</p>
+            <div>{{ test.description|safe|escape }}</div>
+        </li>
+    {% empty %}
+        <li>No tests yet.</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
